@@ -1,0 +1,4 @@
+Django==1.11.1
+uWSGI==2.0.15
+requests==2.14.1
+pyTelegramBotAPI==2.3.2
