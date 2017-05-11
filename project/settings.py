@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'bot',
+    'bot', 
     'rest_framework',
     'telegrambot',
 ]
@@ -118,6 +118,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -128,6 +129,5 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets', 'static')
 STATIC_URL = '/static/'
 
-SITE_ID = 1
-TELEGRAM_BOT_HANDLERS_CONF = "bot.handlers"
+TELEGRAM_BOT_HANDLERS_CONF = "bot.bot_handlers"
 TELEGRAM_BOT_TOKEN_EXPIRATION = 2
