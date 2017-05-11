@@ -27,8 +27,9 @@ def callbackapi(request):
         )
 
         message.save()
-        
+
         reply_body = "Записал: '{body}'".format(body=body)
         api.message_send(reply_body, user_id)
 
         return HttpResponse('ok')
+

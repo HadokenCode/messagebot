@@ -4,4 +4,8 @@ VK_API_VERSION = '5.64'
 VK_API_METHOD_MESSAGE_SEND = 'https://api.vk.com/method/messages.send'
 
 TELEGRAM_TOKEN = '343053887:AAG_hFsLpRL1tHPSdHViJwiTIJAf5fe7LK8'
-
+WEBHOOK_SSL_CERT = '/etc/letsencrypt/live/akestudio.ru/cert.pem'
+WEBHOOK_HOST = 'akestudio.ru'
+WEBHOOK_URL_BASE = "https://%s/bot" % (WEBHOOK_HOST)
+WEBHOOK_URL_PATH = "/%s/" % (TELEGRAM_TOKEN)
+WEBHOOK_URL = WEBHOOK_URL_BASE + WEBHOOK_URL_PATH

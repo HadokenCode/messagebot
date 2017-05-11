@@ -36,8 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'bot',
+    'rest_framework',
+    'telegrambot',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +127,7 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets', 'static')
 STATIC_URL = '/static/'
+
+SITE_ID = 1
+TELEGRAM_BOT_HANDLERS_CONF = "bot.handlers"
+TELEGRAM_BOT_TOKEN_EXPIRATION = 2
