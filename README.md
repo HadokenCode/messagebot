@@ -4,7 +4,7 @@ Simple telegram and vk callback api message bot.
 
 ### Предварительные требования
 - Сервер Ubuntu 16.04 LTS
-- Домен второго уровня привязанный к серверу (Указаны A-записи, указывающие на IP-адрес сервера для @.<домен.ru> и *.<домен.ru>
+- Домен второго уровня привязанный к серверу (Указаны A-записи, указывающие на IP-адрес сервера для @.домен.ru и *.домен.ru
 - Создана и настроена группа вк
 - Создан и настроен бот в Telegram
 
@@ -39,14 +39,6 @@ $ sudo chown django:django /var/www/django
 Поменять текущего пользователя
 ```sh
 $ su django
-```
-
-Создать директории
-```sh
-$ mkdir /var/www/django/project
-$ mkdir /var/www/django/tmp
-$ mkdir /var/www/django/logs
-$ mkdir /var/www/django/data
 ```
 
 Создать директории
@@ -105,14 +97,9 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 $ sudo service nginx reload
 ```
 
-Перезапустите Nginx
-```sh
-$ sudo service nginx reload
-```
-
 Сделать SSL сертификат
 ```sh
-$ sudo certonly -a webroot --webroot-path=/var/www/html -d домен.ru -d www.домен.ru
+$ sudo certbot certonly -a webroot --webroot-path=/var/www/html -d домен.ru -d www.домен.ru
 ```
 
 Генерация параметров Диффи-Хеллмана
@@ -138,3 +125,22 @@ $ crontab -e
 30 5 * * 1 sudo letsencrypt renew
 35 5 * * 1 sudo service nginx reload
 ```
+
+### Установка виртуального окружения
+Установить python3.6
+```sh
+$ sudo add-apt-repository ppa:jonathonf/python-3.6
+$ sudo apt-get update
+$ sudo apt-get install python3.6 python3.6-dev
+```
+
+Установить sqlite3
+```sh
+$ sudo apt-get install sqlite3
+```
+
+Установить virtualenv, supervisor и зависимости
+```sh
+$ sudo apt-get install python3-dev build-essential supervisor virtualenv
+```
+
