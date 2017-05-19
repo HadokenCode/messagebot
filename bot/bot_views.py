@@ -83,6 +83,8 @@ class MessageCommandView(TemplateCommandView):
             reply_body = 'Записал: {body}'.format(body=body) # ответное сообщение после сохранения
         elif context['status'] == 'clear': # если статус clear
             reply_body = 'Для начала диалога напишите мне /hello, а для окончания /bye' # ответное сообщение с уведомлением
+        elif context['status'] == 'closed': # если статус clear
+            reply_body = 'Для начала диалога напишите мне /hello' # ответное сообщение с уведомлением
 
         redis_connection.set( 'telegram:{user_id}'.format(user_id=user_id), json.dumps( context ) ) # сохранить контекст в redis
 
