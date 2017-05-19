@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'bot', 
+    'bot',
     'rest_framework',
     'telegrambot',
 ]
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'messagebot.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'messagebot_db',
+        'USER' : 'messagebot_user',
+        'PASSWORD' : 'messagebot_secret',
+        'HOST' : 'localhost',
+        'PORT' : '',
     }
 }
 

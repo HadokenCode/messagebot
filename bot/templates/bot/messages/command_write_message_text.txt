@@ -1,1 +1,1 @@
-Записал: '{{ response }}'
+{{ response }}
