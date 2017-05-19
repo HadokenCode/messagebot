@@ -25,8 +25,8 @@ class StartCommandView(TemplateCommandView):
             for message in messages: # посчитать кол-во слов
                 count += len(message.strip().split(' '))
             reply_delimeter = ' В прошлом диалоге было {count} слов.'.format(count=count) # вернуть в ответе кол-во слов
-            context['status'] = 'record' # установить статус record для начала записи
-            context['messages'] = [] # обнулить массив сообщений
+        context['status'] = 'record' # установить статус record для начала записи
+        context['messages'] = [] # обнулить массив сообщений
 
         redis_connection.set( 'telegram:{user_id}'.format(user_id=user_id), json.dumps( context ) ) # сохранить контекст в redis
 
